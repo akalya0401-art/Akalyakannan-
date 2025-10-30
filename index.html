@@ -1,0 +1,219 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akalya K — Resume & Portfolio</title>
+  <meta name="description" content="Resume and portfolio template for Akalya K — built with HTML/CSS/JS">
+  <style>
+    /* Simple modern responsive resume/portfolio single-file template */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --maxw:1000px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071024 0%, #071226 60%);color:#e6eef8}
+    a{color:inherit}
+    .container{max-width:var(--maxw);margin:28px auto;padding:20px}header{display:flex;gap:20px;align-items:center}
+.avatar{width:120px;height:120px;border-radius:18px;flex:0 0 120px;background:linear-gradient(135deg,var(--accent),#2563eb);display:grid;place-items:center;font-weight:700;font-size:32px;color:white;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+.headline{flex:1}
+.name{font-size:28px;font-weight:800;margin:0}
+.role{margin:6px 0;color:var(--muted)}
+.actions{display:flex;gap:10px;margin-top:12px}
+.btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#4f46e5);box-shadow:0 6px 18px rgba(92,32,255,0.12);color:white;border:none}
+
+main{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-top:20px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+
+/* Left column */
+.section{margin-bottom:18px}
+h2{margin:0 0 8px 0;font-size:16px}
+p{margin:0;color:var(--muted);line-height:1.45}
+
+.experience .item{padding:12px 0;border-top:1px dashed rgba(255,255,255,0.02)}
+.item:first-child{border-top:0}
+.item .title{font-weight:700}
+.item .meta{color:var(--muted);font-size:13px}
+
+.projects{display:grid;gap:10px}
+.project{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+.project .project-title{font-weight:700}
+
+/* Right column */
+.sidebar .profile{display:grid;gap:8px}
+.contact-row{display:flex;gap:8px;align-items:center}
+.skill{display:flex;align-items:center;justify-content:space-between;margin:8px 0}
+.skill .bar{height:8px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden;flex:1;margin-left:8px}
+.skill .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#06b6d4);width:60%}
+
+footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+
+/* Responsive */
+@media (max-width: 880px){
+  main{grid-template-columns:1fr}
+  .avatar{width:96px;height:96px}
+  .container{padding:12px;margin:12px}
+}
+
+/* Simple print-friendly tweaks */
+@media print{
+  body{background:white;color:black}
+  .card{background:white;border:1px solid #ccc}
+  .btn{display:none}
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">AK</div>
+      <div class="headline">
+        <h1 class="name">Akalya K</h1>
+        <div class="role">Frontend Developer • UI/UX enthusiast</div>
+        <div class="actions">
+          <button class="btn" id="downloadPdf">Download PDF</button>
+          <a class="btn primary" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+        <label title="Toggle theme" style="font-size:13px;color:var(--muted)">Theme</label>
+        <button class="btn" id="toggleTheme">Toggle</button>
+      </div>
+    </header><main>
+  <section>
+    <div class="card section about">
+      <h2>About</h2>
+      <p>Hello! I'm Akalya — a frontend developer who loves crafting simple, accessible interfaces and delightful micro-interactions. I focus on performance, design systems and writing clean, testable code.</p>
+    </div>
+
+    <div class="card section experience">
+      <h2>Experience</h2>
+
+      <div class="item">
+        <div class="title">Frontend Developer — Acme Labs</div>
+        <div class="meta">Jun 2022 — Present • Remote</div>
+        <p>Built reusable component library, improved loading times by 30% and led the migration to a new design system.</p>
+      </div>
+
+      <div class="item">
+        <div class="title">UI Engineer — PixelCraft</div>
+        <div class="meta">Jan 2020 — May 2022 • Bengaluru</div>
+        <p>Shipped customer-facing dashboards, collaborated with designers, and introduced end-to-end testing for critical flows.</p>
+      </div>
+    </div>
+
+    <div class="card section projects">
+      <h2>Selected Projects</h2>
+      <div class="project">
+        <div class="project-title">Portfolio Generator</div>
+        <div class="meta">React • Node.js • Netlify</div>
+        <p>Generates portfolio pages from a JSON schema. Focus on accessibility and tiny bundle sizes.</p>
+      </div>
+      <div class="project">
+        <div class="project-title">Design System</div>
+        <div class="meta">Storybook • CSS Vars</div>
+        <p>Component library used across three products, with tokens, accessibility checks, and documentation site.</p>
+      </div>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <div class="card profile">
+      <h2>Contact</h2>
+      <div class="contact-row"><strong>Email</strong><span style="margin-left:auto">hello@example.com</span></div>
+      <div class="contact-row"><strong>Phone</strong><span style="margin-left:auto">+91 98765 43210</span></div>
+      <div class="contact-row"><strong>Location</strong><span style="margin-left:auto">Bengaluru, India</span></div>
+
+      <hr style="opacity:0.06;margin:12px 0">
+
+      <h2>Skills</h2>
+      <div class="skill"><span>HTML/CSS</span><div class="bar"><i style="width:95%"></i></div></div>
+      <div class="skill"><span>JavaScript</span><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="skill"><span>React</span><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill"><span>Design</span><div class="bar"><i style="width:70%"></i></div></div>
+
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h2 id="contact">Send a message</h2>
+      <form id="contactForm">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <input name="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          <input name="email" placeholder="Email" type="email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          <textarea name="message" placeholder="Message" rows="4" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          <div style="display:flex;gap:8px">
+            <button class="btn primary" type="submit">Send</button>
+            <button class="btn" type="button" id="clearForm">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </aside>
+</main>
+
+<footer class="card">
+  Built with ♥ — Export or print this page for a PDF resume.
+</footer>
+
+  </div>  <script>
+    // Basic interactive behaviour: theme toggle, simple contact handler, download as PDF (print)
+    (function(){
+      const toggle = document.getElementById('toggleTheme');
+      const download = document.getElementById('downloadPdf');
+      const form = document.getElementById('contactForm');
+      const clearBtn = document.getElementById('clearForm');
+
+      toggle.addEventListener('click', ()=>{
+        // Very simple theme switch: invert background and text colors
+        if(document.documentElement.style.getPropertyValue('--bg')=== ''){
+          document.documentElement.style.setProperty('--bg','#fff');
+          document.documentElement.style.setProperty('--card','#fff');
+          document.documentElement.style.setProperty('--muted','#667085');
+          document.documentElement.style.setProperty('--accent','#0ea5a4');
+          document.body.style.background = 'linear-gradient(180deg,#f8fafc,#eef2ff)';
+          document.body.style.color = '#061024';
+        } else {
+          document.documentElement.style.removeProperty('--bg');
+          document.documentElement.style.removeProperty('--card');
+          document.documentElement.style.removeProperty('--muted');
+          document.documentElement.style.removeProperty('--accent');
+          document.body.style.background = '';
+          document.body.style.color = '';
+        }
+      });
+
+      download.addEventListener('click', ()=>{
+        // easiest: open print dialog for user to save as PDF
+        window.print();
+      });
+
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = new FormData(form);
+        // Minimal UX: open mailto with content (falls back to message shown)
+        const name = data.get('name');
+        const email = data.get('email');
+        const message = data.get('message');
+        const subject = encodeURIComponent(`Message from ${name} via website`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+        const mailto = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+        // Try to open mail client, if blocked show a friendly alert
+        const opened = window.open(mailto, '_blank');
+        if(!opened){
+          alert('Mail client did not open. Copying message to clipboard instead.');
+          navigator.clipboard && navigator.clipboard.writeText(`To: hello@example.com\nSubject: ${decodeURIComponent(subject)}\n\n${message}`);
+        }
+        form.reset();
+      });
+
+      clearBtn.addEventListener('click', ()=>{ form.reset(); });
+    })();
+  </script></body>
+</html>
